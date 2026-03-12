@@ -729,43 +729,43 @@
     <div class="app" id="app">
         <header class="header">
             <h1>Puzzle <span>·</span> 碎片</h1>
-            <p>Drag &amp; Swap to restore the image</p>
+            <p>拖拽交换拼图块，还原图片</p>
         </header>
         
         <div class="setup-screen" id="setupScreen">
             <div class="card">
-                <h2 class="card-title">Select Image</h2>
+                <h2 class="card-title">选择图片</h2>
                 <div class="image-grid" id="imageGrid">
                     <div class="image-item selected" data-index="0">
                         <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop" alt="Mountain">
-                        <span class="badge">Preset</span>
+                        <span class="badge">预设</span>
                     </div>
                     <div class="image-item" data-index="1">
                         <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=400&fit=crop" alt="Nature">
-                        <span class="badge">Preset</span>
+                        <span class="badge">预设</span>
                     </div>
                     <div class="image-item" data-index="2">
                         <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&h=400&fit=crop" alt="Lake">
-                        <span class="badge">Preset</span>
+                        <span class="badge">预设</span>
                     </div>
                     <div class="image-item" data-index="3">
                         <img src="https://images.unsplash.com/photo-1518173946687-a4c036bc9814?w=400&h=400&fit=crop" alt="Forest">
-                        <span class="badge">Preset</span>
+                        <span class="badge">预设</span>
                     </div>
                     <div class="image-item" data-index="4">
                         <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=400&fit=crop" alt="Ocean">
-                        <span class="badge">Preset</span>
+                        <span class="badge">预设</span>
                     </div>
                 </div>
                 
                 <div class="upload-area" id="uploadArea">
                     <input type="file" id="fileInput" accept="image/jpeg,image/jpg,image/png">
                     <div class="upload-icon">✦</div>
-                    <div class="upload-text">Click or drag to upload image (JPG / PNG)</div>
+                    <div class="upload-text">点击或拖拽上传图片 (JPG / PNG)</div>
                 </div>
                 
                 <div class="preview-container" id="previewContainer">
-                    <div class="preview-label">Current Image Preview</div>
+                    <div class="preview-label">当前图片预览</div>
                     <div class="preview-image">
                         <img id="previewImg" src="" alt="Preview">
                     </div>
@@ -773,31 +773,31 @@
             </div>
             
             <div class="card">
-                <h2 class="card-title">Difficulty</h2>
+                <h2 class="card-title">难度选择</h2>
                 <div class="difficulty-options" id="difficultyOptions">
                     <button class="difficulty-btn selected" data-size="3">
-                        <span>Easy<span class="size">3 × 3</span></span>
+                        <span>简单<span class="size">3 × 3</span></span>
                     </button>
                     <button class="difficulty-btn" data-size="4">
-                        <span>Medium<span class="size">4 × 4</span></span>
+                        <span>中等<span class="size">4 × 4</span></span>
                     </button>
                     <button class="difficulty-btn" data-size="5">
-                        <span>Hard<span class="size">5 × 5</span></span>
+                        <span>困难<span class="size">5 × 5</span></span>
                     </button>
                 </div>
             </div>
             
-            <button class="start-btn" id="startBtn">Begin Game</button>
+            <button class="start-btn" id="startBtn">开始游戏</button>
         </div>
         
         <div class="game-screen" id="gameScreen">
             <div class="game-stats">
                 <div class="stat-item">
-                    <div class="stat-label">Time</div>
+                    <div class="stat-label">时间</div>
                     <div class="stat-value" id="timer">00:00</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-label">Moves</div>
+                    <div class="stat-label">步数</div>
                     <div class="stat-value" id="steps">0</div>
                 </div>
             </div>
@@ -807,8 +807,8 @@
             </div>
             
             <div class="game-controls">
-                <button class="control-btn" id="resetBtn">↺ Reset</button>
-                <button class="control-btn danger" id="quitBtn">✕ Quit</button>
+                <button class="control-btn" id="resetBtn">↺ 重置</button>
+                <button class="control-btn danger" id="quitBtn">✕ 退出</button>
             </div>
         </div>
     </div>
@@ -816,20 +816,20 @@
     <div class="modal-overlay" id="winModal">
         <div class="modal">
             <div class="modal-icon">✦</div>
-            <h2>Complete!</h2>
+            <h2>恭喜完成！</h2>
             <div class="modal-stats">
                 <div class="modal-stat">
-                    <div class="modal-stat-label">Time</div>
+                    <div class="modal-stat-label">用时</div>
                     <div class="modal-stat-value" id="finalTime">00:00</div>
                 </div>
                 <div class="modal-stat">
-                    <div class="modal-stat-label">Moves</div>
+                    <div class="modal-stat-label">步数</div>
                     <div class="modal-stat-value" id="finalSteps">0</div>
                 </div>
             </div>
             <div class="modal-buttons">
-                <button class="modal-btn primary" id="playAgainBtn">Play Again</button>
-                <button class="modal-btn secondary" id="backToSetupBtn">Back</button>
+                <button class="modal-btn primary" id="playAgainBtn">再来一局</button>
+                <button class="modal-btn secondary" id="backToSetupBtn">返回</button>
             </div>
         </div>
     </div>
@@ -961,7 +961,7 @@
         
         function handleFile(file) {
             if (!file.type.match(/image\/(jpeg|jpg|png)/)) {
-                alert('Please upload JPG or PNG format images');
+                alert('请上传 JPG 或 PNG 格式的图片');
                 return;
             }
             
